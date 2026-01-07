@@ -1,3 +1,4 @@
+COPY/jdk-24_linux-aarch64_bin.tar.gz
 *.tar
 *.tar.gz
 *.tgz
