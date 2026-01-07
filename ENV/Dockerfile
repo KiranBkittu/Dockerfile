@@ -1,7 +1,6 @@
-ROM almalinux/9-base
+FROM almalinux
 ENV COURSE="devops" \
-TRAINER="shivakumar" \
-DURATION = "10 HRS"
+TRAINER="shivakumar"
 ## label is used for giving tag so that we can filter also .. docker images -f "label=trainer=shivakumar" ..
 CMD ["sleep","11"]
 ## docker always runs in foreground but we make it background using -d .. docker run -d env.v1
