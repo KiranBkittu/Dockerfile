@@ -1,49 +1,4 @@
 services:
-  catalogue:
-    image: catalogue:v1
-    container_name: catalogue
-    depends_on:
-      - mangodb
-  mangodb:
-    image: mangodb:v1
-    container_name: mangodb
-  redis:
-    image: redis:7.0
-    container_name: redis
-  mysql:
-    image: mysql:latest
-    container_name: mysql
-  rabbitmq:
-    image: rabbitmq:latest
-    container_name: rabbitmq
-    environment:
-      RABBITMQ_DEFAULT_USER: roboshop
-      RABBITMQ_DEFAULT_PASSWORD: roboshop@123
-  user:
-    image: user:latest
-    container_name: user
-    depends_on:
-      - mangodb
-      - redis
-  cart:
-    image: cart:latest
-    container_name: cart
-    depends_on:
-      - redis
-      - mangodb
-  shipping:
-    image: shipping:latest
-    container_name: shipping
-    depends_on:
-      - mysql
-      - redis
-  payment:
-    image: payment:latest
-    container_name: payment
-    depends_on:
-      - rabbitmq
-      - cart
-      - user
   frontend:
     image: penpotapp/frontend
     container_name: frontend
