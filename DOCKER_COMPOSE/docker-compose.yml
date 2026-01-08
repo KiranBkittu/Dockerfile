@@ -11,7 +11,7 @@ services:
     image: redis:7.0
     container_name: redis
   mysql:
-    image: mysql:v1
+    image: mysql:latest
     container_name: mysql
   rabbitmq:
     image: rabbitmq:v1
@@ -45,7 +45,7 @@ services:
       - cart
       - user
   frontend:
-    image: frontend:v1
+    image: penpotapp/frontend
     container_name: frontend
     ports:
     - "80:80"
